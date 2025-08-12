@@ -10,6 +10,8 @@ class GazagoButton extends StatelessWidget {
   final Color buttonColor;
   final Color borderColor;
   final bool disableButton;
+  final int fontWeight;
+  final double fontSize;
 
   const GazagoButton({
     super.key,
@@ -19,6 +21,8 @@ class GazagoButton extends StatelessWidget {
     this.borderColor = Colors.black,
     this.buttonColor = skyBlueColor,
     this.disableButton = false,
+    this.fontWeight = 600,
+    this.fontSize = 18,
   });
 
   @override
@@ -29,7 +33,10 @@ class GazagoButton extends StatelessWidget {
         height: 56,
         decoration: BoxDecoration(
           color: buttonColor,
-          border: Border.all(width: 2.sp, color: borderColor, strokeAlign: BorderSide.strokeAlignOutside),
+          border: Border.all(
+              width: 2.sp,
+              color: borderColor,
+              strokeAlign: BorderSide.strokeAlignOutside),
           borderRadius: BorderRadius.circular(8.sp),
           // boxShadow: [
           //   BoxShadow(
@@ -57,9 +64,9 @@ class GazagoButton extends StatelessWidget {
                       )
                     : StyledText(
                         buttonText,
-                        fontSize: 18,
-                        lineHeight: 18,
-                        fontWeight: 600,
+                        fontSize: fontSize,
+                        lineHeight: fontSize,
+                        fontWeight: fontWeight,
                         color: textColor,
                       ),
               ),

@@ -4,6 +4,8 @@ import 'package:gaza_go/constants/enums.dart';
 import 'package:gaza_go/platform/controllers/login_controller.dart';
 import 'package:gaza_go/platform/helpers/login_helper.dart';
 import 'package:gaza_go/platform/stores/hive_store.dart';
+import 'package:gaza_go/presentations/components/redeem_referral_dialog.dart';
+import 'package:gaza_go/presentations/styles/colors.dart';
 import 'package:gaza_go/presentations/styles/icons.dart';
 import 'package:gaza_go/presentations/styles/styled_text.dart';
 import 'package:get/get.dart' hide Trans;
@@ -88,6 +90,35 @@ class Login extends StatelessWidget {
               child: Column(
                 children: [
                   ...renderLoginButtons(controller),
+                  // Test button for Redeem Referral Code dialog
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.sp, horizontal: 25.sp),
+                    width: double.infinity,
+                    child: SizedBox(
+                      height: 50.sp,
+                      child: InkWell(
+                        onTap: () {
+                          showRedeemReferralDialog();
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: lightGreenColor,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10.sp)),
+                          ),
+                          alignment: Alignment.center,
+                          child: const StyledText(
+                            'Test Redeem Referral Code',
+                            color: Colors.black,
+                            fontWeight: 500,
+                            fontSize: 16,
+                            lineHeight: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
